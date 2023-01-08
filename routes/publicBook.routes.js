@@ -22,15 +22,14 @@ router.get('/allBooks', async (req, res, next) => {
 })
 
 //Searching unique Book
-router.get('/uniqueBook', async (req, res, next) => {
-
+router.get('/uniqueBook/:bookId', async (req, res, next) => {
     try {
 
         //READ - Retornar carta específica
-        const { bookName } = req.body;
+        const { bookId } = req.body;
 
-        const searchBook = await Book.findOne({ bookName })
-        res.status(201).json(searchBook)
+        const searchedBook = await Book.findById({ bookId })
+        res.status(201).json(searchedBook)
 
     } catch (error) {
         next(error)
