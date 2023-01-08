@@ -10,10 +10,12 @@ require("./config/db.js");
 
 const app = express();
 
+app.use((req, res, next) => {
+  res.set('Access-Control-Allow-Origin', '*')
+  next()
+});
 app.use(express.json());
 app.use(morgan("dev"));
-// Não esquecer de criar variável de ambiente com o endereço do seu app React (local ou deployado no Netlify)
-app.use(cors());
 
 
 //Rotas
