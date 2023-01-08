@@ -25,7 +25,7 @@ router.post('/book', async (req, res, next) => {
 
 //Update Book
 router.put('/updateBook/:bookId', async (req, res, next) => {
-    const update  = req.body;
+    const update = req.body;
     const { bookId } = req.params;
 
     try {
@@ -68,6 +68,20 @@ router.put('/book/:bookId/image-upload',
         } catch (error) {
             next(error)
         }
+
+    })
+
+//Searching a Book
+router.get('/uniqueBook/:id', async (req, res, next) => {
+    const {id} = req.params;
+    try {
+
+        const foundedBook = await Book.findById(id)
+        res.status(201).json(foundedBook)
+
+    } catch (error) {
+        next(error)
+    }
 
 })
 
