@@ -21,21 +21,19 @@ router.get('/allBooks', async (req, res, next) => {
 
 })
 
-//Searching unique Book
-router.get('/uniqueBook/:bookId', async (req, res, next) => {
+//Searching a Book
+/*router.get('/uniqueBook/:bookId', async (req, res, next) => {
+    const { bookId } = req.params;
     try {
 
-        //READ - Retornar carta específica
-        const { bookId } = req.params;
-
-        const searchedBook = await Book.findById({ bookId })
-        res.status(201).json(searchedBook)
+        const foundedBook = await Book.findById(bookId)
+        res.status(201).json(foundedBook)
 
     } catch (error) {
         next(error)
     }
 
-})
+})*/
 
 
 
