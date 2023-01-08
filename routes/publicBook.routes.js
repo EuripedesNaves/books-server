@@ -26,7 +26,7 @@ router.get('/uniqueBook/:bookId', async (req, res, next) => {
     try {
 
         //READ - Retornar carta específica
-        const { bookId } = req.body;
+        const { bookId } = req.params;
 
         const searchedBook = await Book.findById({ bookId })
         res.status(201).json(searchedBook)
