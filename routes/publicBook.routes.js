@@ -22,7 +22,7 @@ router.get('/allBooks', async (req, res, next) => {
 })
 
 //Searching a Book
-/*router.get('/uniqueBook/:bookId', async (req, res, next) => {
+router.get('/uniqueBook/:bookId', async (req, res, next) => {
     const { bookId } = req.params;
     try {
 
@@ -33,7 +33,7 @@ router.get('/allBooks', async (req, res, next) => {
         next(error)
     }
 
-})*/
+})
 
 
 
