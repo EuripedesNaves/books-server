@@ -2,18 +2,13 @@
 //Environment 
 require("dotenv").config();
 const express = require("express");
-const cors = require("cors");
 const morgan = require("morgan");
 
 //Conectado BD
 require("./config/db.js");
 
 const app = express();
-
-app.use((req, res, next) => {
-  res.set('Access-Control-Allow-Origin', '*')
-  next()
-});
+//Não será preciso cors, aplicação aberta
 app.use(express.json());
 app.use(morgan("dev"));
 
