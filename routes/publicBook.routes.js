@@ -23,7 +23,7 @@ router.get('/allBooks', async (req, res, next) => {
 
 //Searching a Book
 router.get('/uniqueBook/:bookId', async (req, res, next) => {
-    const { bookId } = req.params;
+    const {bookId} = req.params;
     try {
 
         const foundedBook = await Book.findById(bookId)
@@ -34,7 +34,6 @@ router.get('/uniqueBook/:bookId', async (req, res, next) => {
     }
 
 })
-
 
 
 module.exports = router;
